@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block link %}{% endblock %}
+
+{% block content %}
+
+    <h2 style="text-align: center; margin-top:10px;">還券作業</h2>
+    
+    <form action="" method=post enctype=multipart/form-data>
+      <p>轉借券餘額檔案（.csv）（Netterm 下載路徑：16-27-08）：</p>
+      <div class="custom-file">
+        <label class="custom-file-label" for="formFile">選擇檔案</label>
+        <input type="file" name="upload_detail_file" class="custom-file-input">
+      </div>
+
+      <hr>
+
+      <p>客戶還券（.xlsx）（還券交易單）</p>
+      <div class="custom-file">
+        <label class="custom-file-label" for="formFile">選擇檔案</label>
+        <input type="file" name="upload_return_file" class="custom-file-input">
+      </div>
+      <p style="margin-top:15px;">輸入工作表名稱（請先輸入再選取檔案，預設為Return Detail、Recall 雅）</p>
+      <input class="form-control" type="text" id="supply-input" value="Return Detail" name="sheetname_1">
+      <br>
+      <!-- <p style="margin-top:15px;">輸入工作表名稱（請先輸入再選取檔案，預設為Recall 雅）</p> -->
+      <input class="form-control" type="text" id="supply-input" value="Recall 雅" name="sheetname_2">
+      
+      <hr>
+
+      <p>自然人提前還券檔案（.txt）（Netterm 下載路徑：16-04-02-04）：</p>
+      <div class="custom-file">
+        <label class="custom-file-label" for="formFile">選擇檔案</label>
+        <input type="file" name="upload_retail_file" class="custom-file-input">
+      </div>
+
+      <hr>
+
+      <label for="formFile">起始序號</label>
+      <input type="number" name="" id="" value="25001">
+
+      <label for="formFile">檔案序號</label>
+      <input type="number" name="" id="" value="1">
+
+      <input type="submit" id="result" value="執行運算">
+    </form>
+
+    data：{{ data }}
+    
+    
+
+
+
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="{{ url_for('static', filename='shares_return/shares_return.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap-4.1.3/css/bootstrap.bundle.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap-4.1.3/css/bootstrap.min.css') }}">
+    <link rel="shortcut icon" href="#">
+    {% block link %}{% endblock %}
+</head>
+<body>
+    <!-- {% include 'header.html' %} -->
+
+    <!-- main context -->
+    <div class="container">
+
+        {% block content %}{% endblock %}
+
+    </div>
+    
+
+    <script type="text/javascript" src="{{ url_for('static', filename='libs/jquery-3.5.1.min.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='libs/bootstrap-4.1.3/js/popper.min.js') }}"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='libs/bootstrap-4.1.3/js/bootstrap.min.js') }}"></script>
+    {% block script %}{% endblock %}
+
+</body>
+</html>
