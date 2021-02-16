@@ -55,6 +55,7 @@ def index():
             retail_detail['費率'] = retail_detail['費率'].astype(float)
             retail_detail['最後處理日期'] = retail_detail['最後處理日期'].astype(int)
 
+            # 匯出CSV檔
             csvlist = [['8800 還券交易單'], ['還券申請日：'], ['a','b','c']]
             si = StringIO()
             cw = csv.writer(si)
